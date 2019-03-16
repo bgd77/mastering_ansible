@@ -1,0 +1,6 @@
+---
+  - hosts: all, !control
+    become: true
+    tasks:
+      - name: update EC2 instances
+        apt: name=* state=latest update_cache=yes force_apt_get=true
